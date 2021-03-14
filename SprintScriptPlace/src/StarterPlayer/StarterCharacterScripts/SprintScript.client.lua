@@ -33,7 +33,10 @@ end
 
 
 local function setupSprinting()
-    ContextActionService:BindAction(SPRINT_ACTION_NAME, handleSprinting, true, sprintKeybind.desktop)
+    -- I have made some changes as you can see.
+    -- anything you put in sprintKeybind, it will be the sprinting's keybind.
+    -- And yes, you can have multiple keybinds.
+    ContextActionService:BindAction(SPRINT_ACTION_NAME, handleSprinting, true, table.unpack(sprintKeybind))
 end
 
 setupSprinting()
