@@ -13,7 +13,7 @@ local SPEED_WHEN_SPRINTING = 20
 local SPEED_WHEN_WALKING = 16
 
 local sprintKeybind = {
-    desktop = Enum.KeyCode.LeftShift
+    Enum.KeyCode.LeftShift
 }
 
 
