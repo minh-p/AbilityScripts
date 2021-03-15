@@ -63,7 +63,7 @@ local function onStateChanged(_, newState)
         playerCanDoubleJump = false
         playerHadDoubleJumped = false
 
-        humanoid.JumpPower = POWER_OF_FIRST_JUMP
+        playerHumanoid.JumpPower = POWER_OF_FIRST_JUMP
     end
 end
 
@@ -88,7 +88,7 @@ local function onJumpRequest()
     if not playerCanDoubleJump then return end
 
     playerHadDoubleJumped = true
-    humanoid.JumpPower = POWER_OF_SECOND_JUMP
+    playerHumanoid.JumpPower = POWER_OF_SECOND_JUMP
     playerHumanoid:ChangeState(HUMANOID_JUMPING_ENUM)
 end
 
