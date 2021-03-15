@@ -1,0 +1,5 @@
+std = "roblox"
+
+[rules]
+multiple_parentheses = "allow"
+multiple_statements = "allow"
