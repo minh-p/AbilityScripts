@@ -35,6 +35,28 @@ playerHumanoid.JumpPower = POWER_OF_FIRST_JUMP
 local playerCanDoubleJump = false
 local playerHadDoubleJumped = false
 
+
+local function loadInAnimation(...)
+    local animations = table.pack(...)
+
+    local loadedAnimationTracks = {}
+
+    for _, animation in ipairs(animations) do
+        if typeof(animation) == "Instance" and animation:IsA("Animation") then
+            table.insert(playerHumanoid:LoadAnimation(animation))
+        end
+    end
+
+    return table.unpack(loadedAnimationTracks)
+end
+
+
+local secondJumpAnimation = Instance.new("Animation")
+secondJumpAnimation.Parent = playerCharacter
+secondJumpAnimation.AnimationId = "rbxassetid://616161997"
+
+local secondJumpAnimationTrack = loadInAnimation(secondJumpAnimation)
+
 -- Let's start with the humanoid state changed event.
 
 local function onStateChanged(_, newState)
@@ -89,6 +111,11 @@ local function onJumpRequest()
 
     playerHadDoubleJumped = true
     playerHumanoid.JumpPower = POWER_OF_SECOND_JUMP
+
+    if secondJumpAnimationTrack then
+        secondJumpAnimationTrack:Play()
+    end
+
     playerHumanoid:ChangeState(HUMANOID_JUMPING_ENUM)
 end
 
