@@ -13,7 +13,7 @@ local HUMANOID_LANDED_ENUM = Enum.HumanoidStateType.Landed
 local TIME_BETWEEN_JUMPS = 0.2
 -- Modifying from the article, we have these constants. :D
 local POWER_OF_FIRST_JUMP = 55
-local POWER_OF_SECOND_JUMP = 26
+local POWER_OF_SECOND_JUMP = 38
 
 local localPlayer = Players.LocalPlayer
 local playerCharacter = localPlayer.Character or localPlayer.CharacterAdded:Wait()
